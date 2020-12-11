@@ -17,45 +17,90 @@
             font-family: monospace;
             font-size: 16px;
         }
-        
+
         .container {
-            width: 400px;
             max-width: 90vw;
         }
-        
+
+        .content {
+            display: flex;
+            max-width: 100%;
+        }
+
+        .content > * {
+            padding: 1rem;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         img {
             width: 100%;
             height: auto;
         }
-        
+
         a {
             color: #396855;
         }
-        
+
         .logo {
-            max-width: 25%;
-            margin: 0 auto;
+            width: 100px;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 864px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .content > * {
+                padding: 0;
+            }
+
+            .logo {
+                max-width: 50%;
+            }
+        }
+
+        @media (min-width: 865px) {
+            .text > p:first-child {
+                margin-top: 0;
+            }
+
+            .text > p:last-child {
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Devadam AB</h1>
-        
-        <img src="https://www.gravatar.com/avatar/dc12f2463cbd4b64ba2aff67d4e7299e?s=400&d=mp" height="400" width="400" />
-        
-        <p style="text-align: justify">
-            Hej, jag heter Adam Ydenius och är en <strong>system&shy;utvecklare</strong> 
-            som jobbar som konsult via <a href="https://www.kvadrat.se/anlita-kvadrat/hitta-konsult/adam-ydenius/">Kvadrat</a>. 
-            Du kan nå mig på <a href="https://www.linkedin.com/in/adamydenius/">LinkedIn</a> 
-            eller på <a href="mailto:adam@devadam.se">adam@devadam.se</a>.
-        </p>
-        
-        <div class="logo">
-            <img src="devadam-logo.png" height="100" width="100" />
+
+        <div class="content">
+
+            <img src="https://www.gravatar.com/avatar/dc12f2463cbd4b64ba2aff67d4e7299e?s=400&d=mp" class="image" height="400" width="400" />
+
+            <div class="text">
+                <p style="text-align: justify">
+                    Hej, jag heter Adam Ydenius och är en <strong>system&shy;utvecklare</strong>
+                    som jobbar som konsult via <a href="https://www.kvadrat.se/anlita-kvadrat/hitta-konsult/adam-ydenius/">Kvadrat</a>.
+                    Du kan nå mig på <a href="https://www.linkedin.com/in/adamydenius/">LinkedIn</a>
+                    eller på <a href="mailto:adam@devadam.se">adam@devadam.se</a>.
+                </p>
+
+                <div class="logo">
+                    <img src="devadam-logo.png" height="100" width="100" />
+                </div>
+
+                <p><small><a href="https://mollwe.se">mollwe.se</a> <a href="https://ehlo.dev">ehlo.dev</a></small></small></p>
+            </div>
         </div>
-    
-        <p><small><a href="https://mollwe.se">mollwe.se</a> <a href="https://ehlo.dev">ehlo.dev</a></small></small></p>
     </div>
 </body>
 </html>
